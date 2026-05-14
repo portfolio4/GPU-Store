@@ -1,0 +1,41 @@
+Sent 1000 submits.
+    Average: 36187.059
+    min: 11085
+     1 percentile: 11462
+     5 percentile: 12054
+    25 percentile: 17341
+    50 percentile: 26890
+    75 percentile: 51363
+    95 percentile: 86930
+    99 percentile: 114333
+    max: 226228
+
+
+
+
+Generated 100 trades. Latency stats for time to passive trade:
+    Average: 138783.71
+    min: 102597
+     1 percentile: 104210
+     5 percentile: 107542
+    25 percentile: 118896
+    50 percentile: 133729
+    75 percentile: 150703
+    95 percentile: 191151
+    99 percentile: 276329
+    max: 276329
+
+
+
+
+Sent 1000 cancels.
+    Average: 26342.286
+    min: 17196
+     1 percentile: 17577
+     5 percentile: 18313
+    25 percentile: 23643
+    50 percentile: 25742
+    75 percentile: 28655
+    95 percentile: 36278
+    99 percentile: 43676
+    max: 145202

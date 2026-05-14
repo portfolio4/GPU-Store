@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPU Store</title>
+    <link rel="stylesheet" href="/css/trade.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <h3>Products</h3>
+            <ul id="product-list">
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="trading-grid">
+                <header class="product-header">
+                    <div id="current-product-description-container">
+                        <h1 id="current-product">PRODUCT</h1>
+                        <div id="current-product-summary">SUMMARY</div>
+                    </div>
+                </header>
+                <div id="current-product-image-container">
+                    <img id="current-product-image"></img>
+                </div>
+
+                <section class="order-book">
+                    <div class="book-container">
+                        <div class="book-grid">
+                            <h4 class="asks">Sellers</h4>
+                            <div class="grid-header">
+                                <span>Price (USD)</span>
+                                <span>Size</span>
+                            </div>
+                            <div id="asks-list" class="grid-body asks"></div>
+                        </div>
+
+                        <div class="spread">Spread: <span id="spread-val">0.05</span></div>
+
+                        <div class="book-grid">
+                            <div class="grid-header">
+                                <span>Price (USD)</span>
+                                <span>Size</span>
+                            </div>
+                            <div id="bids-list" class="grid-body bids"></div>
+                            <h4 class="bids">Buyers</h4>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="order-entry">
+                    <div>
+                        <div class="form-group grid-row">
+                            <label>Price</label>
+                            <input type="number" id="order-price" step="0.01">
+                        </div>
+                        <div class="form-group grid-row">
+                            <label>Qty</label>
+                            <input type="number" id="order-qty" step="1">
+                        </div>
+                        <div class="form-group grid-row">
+                            <div>
+                                <input type="radio" id="order-duration-day" name="order-duration" checked>
+                                <label for="order-duration-day">Day</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" id="order-duration-ioc" name="order-duration">
+                                <label for="order-duration-ioc">IOC</label>
+                            </div>
+                        </div>
+                        <div class="actions grid-row">
+                            <button class="buy-btn" onclick="submitOrder('Buy')">Buy</button>
+                            <button class="sell-btn" onclick="submitOrder('Sell')">Sell</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="user-orders-container">
+                <div class="tabs">
+                    <button class="tab-btn clickable active" id="show-orders-btn" onclick="showUserOrders()">Open Orders</button>
+                    <button class="tab-btn clickable" id="show-trades-btn" onclick="showUserTrades()">Trade History</button>
+                </div>
+                <div class="user-data-wrapper">
+                    <table id="user-orders-table" class="user-data-table">
+                        <thead id="user-orders-header">
+                            <tr>
+                                <th>Action</th>
+                                <th>Order ID</th>
+                                <th>Status</th>
+                                <th>Symbol</th>
+                                <th>Side</th>
+                                <th>Price</th>
+                                <th>Open Qty</th>
+                                <th>Duration</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user-orders-body">
+                        </tbody>
+                    </table>
+                    <table id="user-trades-table" class="user-data-table user-data-hidden">
+                        <thead>
+                            <th>Transaction ID</th>
+                            <th>Client Order ID</th>
+                            <th>Fee Code</th>
+                            <th>Symbol</th>
+                            <th>Side</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Funx Order Id</th>
+                            <th>Timestamp</th>
+                        </tead>
+                        <tbody id="user-trades-body">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/js/trade.js"></script>
+</body>
+</html>

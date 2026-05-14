@@ -1,0 +1,298 @@
+:root {
+    --bg-dark: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --up-color: #00ff88;
+    --up-color-hover: #00cc55;
+    --down-color: #ff3366;
+    --down-color-hover: #ff6699;
+    --border: #333;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+}
+
+.clickable:hover { background: rgba(255,255,255,0.05); }
+
+/* --------- List of products on the side --------- */
+
+.sidebar {
+    background: var(--card-bg);
+    border-right: 1px solid var(--border);
+    padding: 20px 20px 20px 5px;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+}
+
+#product-list li.active {
+    border: 1px solid var(--up-color); /* Highlight whole pill border */
+    background: var(--up-color);
+    color: #000; /* Contrast text for the highlight */
+}
+
+/* --------------------------------------------------------------------- */
+
+.main-content {
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+/* -------------------- Product Info -------------------------------- */
+
+#current-product-description-container {
+}
+
+#current-product-image-container {
+    justify-self: center;
+    max-width: 256px;
+    height: 256px;
+}
+
+#current-product-image {
+    max-width: 256px;
+    max-height: 256px;
+    width: auto;
+    height: auto;
+}
+
+/* ----------------------------------------------------------------- */
+
+/* -------------- Bids and Asks ------------------------------------- */
+.trading-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.book-grid {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.grid-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    padding: 0 10px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #333;
+}
+
+/* Aligning labels to their respective data columns */
+.grid-header span:last-child {
+    text-align: right;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4px 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.grid-row span:last-child {
+    text-align: right; /* Size is always right-aligned */
+}
+
+.asks { color: var(--down-color); }
+.bids { color: var(--up-color); }
+
+.spread {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 8px;
+    background: #252525;
+    margin: 5px 0;
+    color: #aaa;
+}
+
+
+/* ------------------ Order Entry Interface -------------------- */
+
+.order-entry {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.actions button {
+    padding: 15px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.buy-btn { background: var(--up-color); color: #000; }
+.buy-btn:hover { background: var(--up-color-hover); color: #000; }
+
+.sell-btn { background: var(--down-color); color: #fff; }
+.sell-btn:hover { background: var(--down-color-hover); color: #fff; }
+
+/* ------------------------------------------------------------ */
+
+
+
+/* ------------------ Orders and Trades list --------------------- */
+
+.user-orders-container {
+    background: var(--card-bg);
+    margin: 0 20px 20px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.user-data-hidden {
+    display: none;
+}
+
+.tabs {
+    background: #252525;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: #888;
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tab-btn.active {
+    color: var(--text-main);
+    border-bottom: 2px solid var(--up-color);
+}
+
+.user-data-wrapper {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.user-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.user-data-table th {
+    text-align: left;
+    padding: 12px;
+    background: #2a2a2a;
+    position: sticky;
+    top: 0;
+}
+
+.user-data-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.status-Pending { color: #a5a500; }
+.status-Active { color: #00aa00; }
+.status-Dead { color: #aa0000; }
+.status-PartialFilled {
+    color: #add8e6;
+}
+.status-Filled {
+    font-weight: bold;
+    color: #0000ee;
+}
+
+.cancel-btn {
+    background: #333;
+    color: #ff3366;
+    border: 1px solid #444;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ----------------------------------------------------------------- */
+
+@media (max-width: 950px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .trading-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar h3 {
+        display: none;
+    }
+
+    #product-list {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        -webkit-overflowing-scrolling: touch;
+    }
+
+    #product-list li {
+        flex: 0 0 auto;
+    }
+
+    .sidebar {
+        padding: 0;
+    }
+
+    .main-content {
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-header {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #current-product-image-container {
+        justify-self: center;
+    }
+}
+

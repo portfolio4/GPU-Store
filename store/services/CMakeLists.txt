@@ -1,0 +1,6 @@
+add_subdirectory(transaction)
+add_subdirectory(match)
+add_subdirectory(gateway)
+add_subdirectory(market_data)
+add_subdirectory(supplier)
+add_subdirectory(benchmark)

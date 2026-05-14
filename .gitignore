@@ -1,0 +1,4 @@
+*/build/*
+*/build_release/*
+*/install/*
+__pycache__

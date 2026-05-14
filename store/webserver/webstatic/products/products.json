@@ -1,0 +1,45 @@
+{
+    "1": {
+        "id": 1,
+        "ticker": "B300L",
+        "summary": "1 hour compute on 8 B300 GPUs",
+        "price_divisor": 100
+    },
+    "2": {
+        "id": 2,
+        "ticker": "B300M",
+        "summary": "1 hour compute on 4 B300 GPUs",
+        "price_divisor": 100
+    },
+    "3": {
+        "id": 3,
+        "ticker": "H100L",
+        "summary": "1 hour compute on 8 H100 GPUs",
+        "price_divisor": 100
+    },
+    "4": {
+        "id": 4,
+        "ticker": "H100M",
+        "summary": "1 hour compute on 4 H100 GPUs",
+        "price_divisor": 100
+    },
+    "5": {
+        "id": 5,
+        "ticker": "A100L",
+        "summary": "1 hour compute on 8 A100 GPUs",
+        "price_divisor": 100
+    },
+    "6": {
+        "id": 6,
+        "ticker": "A100M",
+        "summary": "1 hour compute on 4 A100 GPUs",
+        "price_divisor": 100
+    },
+    "7": {
+        "id": 7,
+        "ticker": "RTX3060S",
+        "summary": "1 hour compute on 2 RTX3060 GPUs",
+        "price_divisor": 100
+    }
+}
+
